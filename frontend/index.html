@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Query App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+        <h1 class="text-2xl font-bold mb-6 text-center">PDF Query App</h1>
+
+        <!-- PDF Upload -->
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700">Upload PDF</label>
+            <input type="file" id="pdfInput" accept=".pdf" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Company</label>
+                    <input type="text" id="companyNameInput" placeholder="Enter company name" class="mt-2 block w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Product Code</label>
+                    <input type="text" id="productCodeInput" placeholder="Enter product code" class="mt-2 block w-full p-2 border border-gray-300 rounded">
+                </div>
+            </div>
+            <button id="uploadBtn" class="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Upload PDF</button>
+            <p id="uploadStatus" class="mt-2 text-sm text-gray-600"></p>
+        </div>
+
+        <!-- Company/Model Selection -->
+        <div class="mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Select Company</label>
+                    <select id="companySelectMain" class="mt-2 block w-full p-2 border border-gray-300 rounded">
+                        <option value="">-- Select company --</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Select Product</label>
+                    <select id="modelSelectMain" class="mt-2 block w-full p-2 border border-gray-300 rounded">
+                        <option value="">-- Select product --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Query Input -->
+        <div class="mb-6">
+            <label for="queryInput" class="block text-sm font-medium text-gray-700">Ask a Question</label>
+            <input type="text" id="queryInput" placeholder="Enter your question..." class="mt-2 block w-full p-2 border border-gray-300 rounded">
+            <button id="queryBtn" class="mt-4 w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700" disabled>Submit Query</button>
+        </div>
+
+        <!-- Response Output -->
+        <div id="responseOutput" class="mt-6 p-4 bg-gray-50 rounded border border-gray-200">
+            <p class="text-sm text-gray-500">Response will appear here...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

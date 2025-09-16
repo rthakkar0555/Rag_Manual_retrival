@@ -1,0 +1,17 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#responseOutput {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#fileSelect {
+    margin-bottom: 0.5rem;
+}
